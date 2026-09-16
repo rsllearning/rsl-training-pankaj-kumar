@@ -28,3 +28,13 @@ Structure the test suite with @Nested classes and use @ParameterizedTest for mul
    - Null, empty, or blank vouchers should be handled gracefully as no discount applied.
 
 Output only the Java test code for SubscriptionPricingServiceTest.java.
+
+Task 2 prompt
+
+Review and refactor SubscriptionPricingServiceTest for calculateMonthlyPrice(SubscriptionTier, int, String):
+- Instantiate the SUT directly (no mocks).
+- Co-locate validations within domain classes (avoid separate validation classes).
+- Remove numeric prefixes from @DisplayName.
+- Use exact BigDecimal assertions with scale 2 and enforce strict exception contracts.
+- Maintain a clean TDD RED state (do not implement the service).
+Output a concise audit summary followed by the refactored test class.
