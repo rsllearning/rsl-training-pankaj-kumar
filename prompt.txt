@@ -1,0 +1,30 @@
+Task: 1 prompt
+
+Act as a Senior Security Audit Engineer. write a comprehensive JUnit 5 unit test suite for SubscriptionPricingService (SubscriptionPricingServiceTest.java) following strict TDD practices.
+Do not implement the service yet—the goal is to establish a clean RED state when running mvn clean test.
+Structure the test suite with @Nested classes and use @ParameterizedTest for multi-tier and boundary validations. Cover the following rules and scenarios:
+
+1. Base Rates:
+   - BASIC: $50.00 / month
+   - PRO: $150.00 / month
+   - ENTERPRISE: $500.00 / month
+
+2. Longevity Discount Boundaries:
+   - Up to 12 months: No discount (0%)
+   - 13 to 36 months: 10% discount (explicitly check 12, 13, and 36 months)
+   - More than 36 months (37+): 25% discount (explicitly check 36 and 37 months)
+
+3. Promotional Vouchers:
+   - "SAVE20": Deducts $20.00 after any percentage discounts are applied.
+   - "HALFPRICE": Reduces the longevity-adjusted price by 50%.
+   - Unrecognized, invalid, or expired voucher codes must throw InvalidVoucherException.
+
+4. Financial Rules & Boundaries:
+   - Round final monthly prices to 2 decimal places using HALF_UP rounding.
+   - Price floor is strictly $0.00 (e.g., if SAVE20 reduces the total below zero, the price must clamp to $0.00).
+
+5. Edge Cases & Validations:
+   - Null tier or negative tenure months must throw IllegalArgumentException.
+   - Null, empty, or blank vouchers should be handled gracefully as no discount applied.
+
+Output only the Java test code for SubscriptionPricingServiceTest.java.
