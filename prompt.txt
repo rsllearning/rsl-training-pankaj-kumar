@@ -38,3 +38,10 @@ Review and refactor SubscriptionPricingServiceTest for calculateMonthlyPrice(Sub
 - Use exact BigDecimal assertions with scale 2 and enforce strict exception contracts.
 - Maintain a clean TDD RED state (do not implement the service).
 Output a concise audit summary followed by the refactored test class.
+
+Task 3 prompt
+
+Here is the audited test suite in SubscriptionPricingServiceTest.java. 
+Using these tests strictly as the specification, write the minimal production implementation in 
+SubscriptionPricingService.java to make all tests pass. 
+Do not modify, alter, or remove any code in the test file under any circumstances.
