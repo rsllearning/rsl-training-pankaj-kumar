@@ -1,7 +1,10 @@
-package com.rsl.training.subscription;
+package com.rsl.training.subscription.dto;
 
 import java.math.BigDecimal;
 
+/**
+ * Enumeration of available subscription tiers and their monthly base rates.
+ */
 public enum SubscriptionTier {
     BASIC(new BigDecimal("50.00")),
     PRO(new BigDecimal("150.00")),

@@ -45,3 +45,11 @@ Here is the audited test suite in SubscriptionPricingServiceTest.java.
 Using these tests strictly as the specification, write the minimal production implementation in 
 SubscriptionPricingService.java to make all tests pass. 
 Do not modify, alter, or remove any code in the test file under any circumstances.
+
+Task 4 prompt
+
+Now for the REFACTORING, clean up SubscriptionPricingService and organize the project into a proper Spring Boot structure:
+- Modernize the pricing logic using Java 21 switch expressions and clean helper methods.
+- Organize the project into standard packages: controller, service, dto (use Java records for request/response), and exception (@RestControllerAdvice).
+- Add a REST controller endpoint to calculate subscription prices along with MockMvc integration tests.
+- Keep all existing tests in SubscriptionPricingServiceTest.java green (only update package imports if required).
