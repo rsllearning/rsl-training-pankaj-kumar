@@ -53,3 +53,11 @@ Now for the REFACTORING, clean up SubscriptionPricingService and organize the pr
 - Organize the project into standard packages: controller, service, dto (use Java records for request/response), and exception (@RestControllerAdvice).
 - Add a REST controller endpoint to calculate subscription prices along with MockMvc integration tests.
 - Keep all existing tests in SubscriptionPricingServiceTest.java green (only update package imports if required).
+
+Task 5 prompt
+
+Act as an Adversarial QA Engineer. Review our SubscriptionPricingService and brainstorm tricky edge cases and negative scenarios we might have missed (like $0 price floor clamping, exact 12 and 36 month boundaries, invalid or weird vouchers, and rounding errors).
+
+Then:
+1. Pick at least 4 non-trivial edge cases and write JUnit 5 parameterized tests for them in SubscriptionPricingServiceTest and SubscriptionPricingControllerTest.
+2. Provide a clear engineering justification for each test explaining the potential failure mode and why it matters.

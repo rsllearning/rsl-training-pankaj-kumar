@@ -1,4 +1,4 @@
-package com.rsl.training.subscription;
+package com.rsl.training.subscription.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -280,7 +280,10 @@ class SubscriptionPricingServiceTest {
             "SAVE-20",                   // Hyphenated variant
             "UNKNOWN_PROMO",             // Unknown promo code
             "SAVE20,HALFPRICE",          // Voucher stacking attempt
-            "SAVE20+SAVE20"              // Voucher repetition attempt
+            "SAVE20+SAVE20",             // Voucher repetition attempt
+            "SАVE20",                    // Unicode homoglyph: Cyrillic 'А' (U+0410) instead of Latin 'A'
+            "\uFEFFSAVE20",              // Byte Order Mark (BOM) / zero-width no-break space prefix
+            "SAVE20\u200B"               // Zero-width space suffix (U+200B)
         })
         @DisplayName("Security & Contract: Unrecognized or invalid voucher codes must throw InvalidVoucherException referencing the offending voucher")
         void shouldThrowInvalidVoucherExceptionWithDescriptiveMessageForInvalidVoucher(String invalidVoucher) {
