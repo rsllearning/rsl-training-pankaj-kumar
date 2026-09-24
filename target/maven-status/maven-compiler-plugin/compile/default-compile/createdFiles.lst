@@ -1,0 +1,16 @@
+com/rsl/orderservice/model/Product.class
+com/rsl/orderservice/model/Order.class
+com/rsl/orderservice/service/DiscountService.class
+com/rsl/orderservice/repository/CouponRepository.class
+com/rsl/orderservice/repository/ProductRepository.class
+com/rsl/orderservice/model/OrderItem.class
+com/rsl/orderservice/App.class
+com/rsl/orderservice/service/OrderService.class
+com/rsl/orderservice/service/PricingService.class
+com/rsl/orderservice/util/AppLogger.class
+com/rsl/orderservice/model/OrderStatus.class
+com/rsl/orderservice/util/AppLogger$SingleLineFormatter.class
+com/rsl/orderservice/service/InventoryService.class
+com/rsl/orderservice/repository/OrderRepository.class
+com/rsl/orderservice/model/Coupon.class
+com/rsl/orderservice/model/Customer.class
