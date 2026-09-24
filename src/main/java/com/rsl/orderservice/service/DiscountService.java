@@ -49,8 +49,12 @@ public class DiscountService {
 
         if (couponCode != null && !couponCode.isBlank()) {
             Coupon coupon = couponRepository.findByCode(couponCode);
-            log.info("Applying coupon '" + couponCode + "' -> " + coupon.getPercentOff() + "%");
-            percent += coupon.getPercentOff();
+            if (coupon != null) {
+                log.info("Applying coupon '" + couponCode + "' -> " + coupon.getPercentOff() + "%");
+                percent += coupon.getPercentOff();
+            } else {
+                log.warning("Coupon code '" + couponCode + "' is invalid or expired; ignoring");
+            }
         }
 
         return pricingService.percentageDiscountCents(subtotalCents, percent);
