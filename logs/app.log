@@ -30,3 +30,83 @@ java.lang.NullPointerException: Cannot invoke "com.rsl.orderservice.model.Coupon
     at org.codehaus.mojo.exec.ExecJavaMojo.lambda$execute$0(ExecJavaMojo.java:296)
     at java.base/java.lang.Thread.run(Thread.java:1583)
 2026-09-24 13:07:34 [INFO] App - === Order Service finished ===
+2026-09-24 14:36:59 [WARNING] OrderService - Cannot cancel unknown order ORD-DOES-NOT-EXIST
+2026-09-24 14:36:59 [INFO] OrderService - Placing order ORD-1 for Bob
+2026-09-24 14:36:59 [INFO] InventoryService - Reserved 2 of BOOK-001 (was 10, now 8)
+2026-09-24 14:36:59 [INFO] OrderService - Confirmed Order{ORD-1, Bob, CONFIRMED, subtotal=6400c, discount=0c, total=6400c}
+2026-09-24 14:36:59 [INFO] OrderService - Placing order ORD-1 for Bob
+2026-09-24 14:36:59 [INFO] InventoryService - Reserved 1 of BOOK-001 (was 10, now 9)
+2026-09-24 14:36:59 [INFO] OrderService - Confirmed Order{ORD-1, Bob, CONFIRMED, subtotal=3200c, discount=0c, total=3200c}
+2026-09-24 14:36:59 [INFO] OrderService - Cancelled order ORD-1
+2026-09-24 14:36:59 [INFO] InventoryService - Reserved 3 of MUG-010 (was 5, now 2)
+2026-09-24 14:36:59 [WARNING] InventoryService - Refused to reserve 5 of MUG-010 (only 3 in stock)
+2026-09-24 14:36:59 [WARNING] InventoryService - Refused to reserve 5 of MUG-010 (only 3 in stock)
+2026-09-24 14:37:11 [INFO] App - === Order Service starting ===
+2026-09-24 14:37:11 [INFO] App - --- Scenario A: valid order with coupon SAVE10 ---
+2026-09-24 14:37:11 [INFO] OrderService - Placing order ORD-A for Alice
+2026-09-24 14:37:11 [INFO] InventoryService - Reserved 2 of BOOK-001 (was 5, now 3)
+2026-09-24 14:37:11 [INFO] DiscountService - Applying coupon 'SAVE10' -> 10%
+2026-09-24 14:37:11 [INFO] OrderService - Confirmed Order{ORD-A, Alice, CONFIRMED, subtotal=6400c, discount=960c, total=5440c}
+2026-09-24 14:37:11 [INFO] App - --- Scenario B: order with unknown coupon BLACKFRIDAY ---
+2026-09-24 14:37:11 [INFO] OrderService - Placing order ORD-B for Bob
+2026-09-24 14:37:11 [INFO] InventoryService - Reserved 1 of MUG-010 (was 3, now 2)
+2026-09-24 14:37:11 [SEVERE] App - Scenario failed: B: order with unknown coupon BLACKFRIDAY
+java.lang.NullPointerException: Cannot invoke "com.rsl.orderservice.model.Coupon.getPercentOff()" because "coupon" is null
+    at com.rsl.orderservice.service.DiscountService.discountCents(DiscountService.java:52)
+    at com.rsl.orderservice.service.OrderService.placeOrder(OrderService.java:78)
+    at com.rsl.orderservice.App.lambda$main$1(App.java:63)
+    at com.rsl.orderservice.App.runScenario(App.java:79)
+    at com.rsl.orderservice.App.main(App.java:62)
+    at org.codehaus.mojo.exec.ExecJavaMojo.doMain(ExecJavaMojo.java:385)
+    at org.codehaus.mojo.exec.ExecJavaMojo.doExec(ExecJavaMojo.java:374)
+    at org.codehaus.mojo.exec.ExecJavaMojo.lambda$execute$0(ExecJavaMojo.java:296)
+    at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-09-24 14:37:11 [INFO] App - === Order Service finished ===
+2026-09-24 16:33:08 [WARNING] OrderService - Cannot cancel unknown order ORD-DOES-NOT-EXIST
+2026-09-24 16:33:08 [INFO] OrderService - Placing order ORD-1 for Bob
+2026-09-24 16:33:08 [INFO] InventoryService - Reserved 2 of BOOK-001 (was 10, now 8)
+2026-09-24 16:33:08 [INFO] OrderService - Confirmed Order{ORD-1, Bob, CONFIRMED, subtotal=6400c, discount=0c, total=6400c}
+2026-09-24 16:33:08 [INFO] OrderService - Placing order ORD-1 for Bob
+2026-09-24 16:33:08 [INFO] InventoryService - Reserved 1 of BOOK-001 (was 10, now 9)
+2026-09-24 16:33:08 [INFO] OrderService - Confirmed Order{ORD-1, Bob, CONFIRMED, subtotal=3200c, discount=0c, total=3200c}
+2026-09-24 16:33:08 [INFO] OrderService - Cancelled order ORD-1
+2026-09-24 16:33:08 [WARNING] DiscountService - Coupon code 'BLACKFRIDAY' is invalid or expired; ignoring
+2026-09-24 16:33:08 [INFO] InventoryService - Reserved 3 of MUG-010 (was 5, now 2)
+2026-09-24 16:33:08 [WARNING] InventoryService - Refused to reserve 5 of MUG-010 (only 3 in stock)
+2026-09-24 16:33:08 [WARNING] InventoryService - Refused to reserve 5 of MUG-010 (only 3 in stock)
+2026-09-24 16:33:57 [INFO] App - === Order Service starting ===
+2026-09-24 16:33:57 [INFO] App - --- Scenario A: valid order with coupon SAVE10 ---
+2026-09-24 16:33:57 [INFO] OrderService - Placing order ORD-A for Alice
+2026-09-24 16:33:57 [INFO] InventoryService - Reserved 2 of BOOK-001 (was 5, now 3)
+2026-09-24 16:33:57 [INFO] DiscountService - Applying coupon 'SAVE10' -> 10%
+2026-09-24 16:33:57 [INFO] OrderService - Confirmed Order{ORD-A, Alice, CONFIRMED, subtotal=6400c, discount=960c, total=5440c}
+2026-09-24 16:33:57 [INFO] App - --- Scenario B: order with unknown coupon BLACKFRIDAY ---
+2026-09-24 16:33:57 [INFO] OrderService - Placing order ORD-B for Bob
+2026-09-24 16:33:57 [INFO] InventoryService - Reserved 1 of MUG-010 (was 3, now 2)
+2026-09-24 16:33:57 [WARNING] DiscountService - Coupon code 'BLACKFRIDAY' is invalid or expired; ignoring
+2026-09-24 16:33:57 [INFO] OrderService - Confirmed Order{ORD-B, Bob, CONFIRMED, subtotal=900c, discount=0c, total=900c}
+2026-09-24 16:33:57 [INFO] App - === Order Service finished ===
+2026-09-24 16:44:31 [WARNING] OrderService - Cannot cancel unknown order ORD-DOES-NOT-EXIST
+2026-09-24 16:44:31 [INFO] OrderService - Placing order ORD-1 for Bob
+2026-09-24 16:44:31 [INFO] InventoryService - Reserved 2 of BOOK-001 (was 10, now 8)
+2026-09-24 16:44:31 [INFO] OrderService - Confirmed Order{ORD-1, Bob, CONFIRMED, subtotal=6400c, discount=0c, total=6400c}
+2026-09-24 16:44:31 [INFO] OrderService - Placing order ORD-1 for Bob
+2026-09-24 16:44:31 [INFO] InventoryService - Reserved 1 of BOOK-001 (was 10, now 9)
+2026-09-24 16:44:31 [INFO] OrderService - Confirmed Order{ORD-1, Bob, CONFIRMED, subtotal=3200c, discount=0c, total=3200c}
+2026-09-24 16:44:31 [INFO] OrderService - Cancelled order ORD-1
+2026-09-24 16:44:31 [WARNING] DiscountService - Coupon code 'BLACKFRIDAY' is invalid or expired; ignoring
+2026-09-24 16:44:31 [INFO] InventoryService - Reserved 3 of MUG-010 (was 5, now 2)
+2026-09-24 16:44:31 [WARNING] InventoryService - Refused to reserve 5 of MUG-010 (only 3 in stock)
+2026-09-24 16:44:31 [WARNING] InventoryService - Refused to reserve 5 of MUG-010 (only 3 in stock)
+2026-09-24 16:44:49 [INFO] App - === Order Service starting ===
+2026-09-24 16:44:49 [INFO] App - --- Scenario A: valid order with coupon SAVE10 ---
+2026-09-24 16:44:49 [INFO] OrderService - Placing order ORD-A for Alice
+2026-09-24 16:44:49 [INFO] InventoryService - Reserved 2 of BOOK-001 (was 5, now 3)
+2026-09-24 16:44:49 [INFO] DiscountService - Applying coupon 'SAVE10' -> 10%
+2026-09-24 16:44:49 [INFO] OrderService - Confirmed Order{ORD-A, Alice, CONFIRMED, subtotal=6400c, discount=960c, total=5440c}
+2026-09-24 16:44:49 [INFO] App - --- Scenario B: order with unknown coupon BLACKFRIDAY ---
+2026-09-24 16:44:49 [INFO] OrderService - Placing order ORD-B for Bob
+2026-09-24 16:44:49 [INFO] InventoryService - Reserved 1 of MUG-010 (was 3, now 2)
+2026-09-24 16:44:49 [WARNING] DiscountService - Coupon code 'BLACKFRIDAY' is invalid or expired; ignoring
+2026-09-24 16:44:49 [INFO] OrderService - Confirmed Order{ORD-B, Bob, CONFIRMED, subtotal=900c, discount=0c, total=900c}
+2026-09-24 16:44:49 [INFO] App - === Order Service finished ===

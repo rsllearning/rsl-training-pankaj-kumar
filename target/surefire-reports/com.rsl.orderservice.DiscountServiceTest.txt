@@ -1,21 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.rsl.orderservice.DiscountServiceTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.014 s <<< FAILURE! -- in com.rsl.orderservice.DiscountServiceTest
-com.rsl.orderservice.DiscountServiceTest.unknownCouponCodeIsIgnoredNotFatal -- Time elapsed: 0.008 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: Unexpected exception thrown: java.lang.NullPointerException: Cannot invoke "com.rsl.orderservice.model.Coupon.getPercentOff()" because "coupon" is null
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
-	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:84)
-	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:75)
-	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:58)
-	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3228)
-	at com.rsl.orderservice.DiscountServiceTest.unknownCouponCodeIsIgnoredNotFatal(DiscountServiceTest.java:35)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: java.lang.NullPointerException: Cannot invoke "com.rsl.orderservice.model.Coupon.getPercentOff()" because "coupon" is null
-	at com.rsl.orderservice.service.DiscountService.discountCents(DiscountService.java:52)
-	at com.rsl.orderservice.DiscountServiceTest.lambda$unknownCouponCodeIsIgnoredNotFatal$0(DiscountServiceTest.java:35)
-	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:71)
-	... 6 more
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.rsl.orderservice.DiscountServiceTest
