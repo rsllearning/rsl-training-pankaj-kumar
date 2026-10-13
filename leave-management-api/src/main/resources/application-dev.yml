@@ -1,0 +1,13 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+leave:
+  management:
+    environment: dev
+    maxLeaveDaysPerRequest: 45
+
+logging:
+  level:
+    com.leave.management.api: DEBUG
